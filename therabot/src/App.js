@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Home from './pages/Home';
+// For icons, we can use a library like react-icons. Here, I'll use placeholders.
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learns React
-        </a>
-      </header>
-    </div>
+  
+   
+      <div class='bg-gradient-to-r from-indigo 500'>
+         <Home/>
+      </div>
+     
+    
   );
-}
+};
+
 
 export default App;
