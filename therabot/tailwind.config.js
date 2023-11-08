@@ -9,8 +9,12 @@ module.exports = {
       },
      colors: {
       'BACKGROUND_BLUE': '#00B2FF',
+      'BUTTON_GREY': '#D9D9D9',
       
-     }
+     },
+     fontFamily: {
+      
+    },
 
     }
    },
