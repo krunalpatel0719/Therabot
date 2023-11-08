@@ -1,4 +1,8 @@
 import React from 'react';
+import { BiSolidDog } from "react-icons/bi";
+import {Cog8ToothIcon}  from '@heroicons/react/24/solid'
+import {ClipboardDocumentListIcon} from '@heroicons/react/24/solid'
+import {BellAlertIcon} from '@heroicons/react/24/solid'
 
 import Eclipse from '../components/Eclipse'
 import ButtonWithLabel from '../components/ButtonWithLabel'
@@ -14,14 +18,14 @@ function Home() {
 
           {/* 2x2 Grid of Buttons */}
           <div className="grid grid-cols-2 gap-24 mt-4 pr-16 pl-16 pt-16">
-            <ButtonWithLabel icon="📝" label="Notes" />
-            <ButtonWithLabel icon="🏋️" label="Exercises" />
-            <ButtonWithLabel icon="⚙️" label="Settings" />
-            <ButtonWithLabel icon="🔔" label="Notifications" />
+            <ButtonWithLabel icon=<ClipboardDocumentListIcon className="w-36 h-36"/> label="Notes" />
+            <ButtonWithLabel icon=<BiSolidDog className="w-36 h-36"/> label="Exercises" />
+            <ButtonWithLabel icon=<Cog8ToothIcon className="w-36 h-36"/>label="Settings" />
+            <ButtonWithLabel icon=<BellAlertIcon className="w-36 h-36"/> label="Notifications" />
           </div>
 
           {/* Contact Therapist Button */}
-          <button className="w-full py-4 md:py-6 lg:py-8 mt-8 mb-12 bg-blue-500 text-3xl text-white rounded-full">
+          <button className="w-full drop-shadow-md shadow-lg bg-BUTTON_GREY opacity-90 py-4 md:py-6 lg:py-8 mt-8 mb-12  text-3xl text-black font-inter  font-bold rounded-full">
             Contact Therapist
           </button>
         </div>
