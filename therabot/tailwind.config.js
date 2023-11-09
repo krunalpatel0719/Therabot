@@ -11,6 +11,8 @@ module.exports = {
      colors: {
       'BACKGROUND_BLUE': '#00B2FF',
       'BUTTON_GREY': '#D9D9D9',
+      'ECLIPSE_BLUE': '#007C97',
+      'CONTACT_THERAPIST_BUTTON_BLUE': '#B2EDFF',
       
      },
      fontFamily: {
