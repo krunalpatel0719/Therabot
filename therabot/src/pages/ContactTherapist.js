@@ -26,14 +26,13 @@ function ContactTherapist() {
            <CircleIcon className = 'w-36 h-36 sm:w-48 sm:h-48' icon=<UserIcon className = 'w-24 h-24 sm:w-36 sm:h-36 mt-16'/> />
             <h2 className = 'pt-4 text-xl font-bold'> Dr. Therapist </h2>
           </div>
-          {/* 2x2 Grid of Buttons */}
+        
           <div className="flex flex-col space-y-12 mb-48 w-full ">
             <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl  font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<ChatBubbleBottomCenterIcon className = 'w-8 h-8'/> label='Text Therapist'/>
             <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl  font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<PhoneIcon className = 'w-8 h-8'/> label='Call Therapist'/>
             <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl  font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<CalendarIcon className = 'w-8 h-8'/> label='Schedule Appointment'/>
             <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<ClipboardIcon className = 'w-8 h-8'/> label='View Feedback'/>
           </div>
-          {/* Contact Therapist Button */}
          
         </div>
       </div>

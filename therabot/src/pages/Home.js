@@ -20,10 +20,19 @@ function Home() {
 
           {/* 2x2 Grid of Buttons */}
           <div className="grid grid-cols-2 gap-32 mt-4 pr-16 pl-16 pt-16">
-            <ButtonWithLabel icon=<ClipboardDocumentListIcon className="w-36 h-36"/> label="Notes" />
-            <ButtonWithLabel icon=<BiSolidDog className="w-36 h-36"/> label="Exercises" />
-            <ButtonWithLabel icon=<Cog8ToothIcon className="w-36 h-36"/>label="Settings" />
-            <ButtonWithLabel icon=<BellAlertIcon className="w-36 h-36"/> label="Notifications" />
+            <Link to="/notes">
+             <ButtonWithLabel icon=<ClipboardDocumentListIcon className="w-36 h-36"/> label="Notes" />
+            </Link>
+            <Link to="/exercises">
+              <ButtonWithLabel icon=<BiSolidDog className="w-36 h-36"/> label="Exercises" />
+            </Link>
+            <Link to="/settings">
+             <ButtonWithLabel icon=<Cog8ToothIcon className="w-36 h-36"/>label="Settings" />
+            </Link>
+            <Link to="/notifications">
+             <ButtonWithLabel icon=<BellAlertIcon className="w-36 h-36"/> label="Notifications" />
+           </Link>
+    
           </div>
 
           {/* Contact Therapist Button */}
