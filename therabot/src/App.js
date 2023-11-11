@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import ClientHome from './pages/ClientHome';
 import ContactTherapist from './pages/ContactTherapist';
 import Notifications from './pages/Notifications';
 import Notes from './pages/Notes';
@@ -8,7 +8,10 @@ import Settings from './pages/Settings';
 import Exercises from './pages/Exercises';
 import LoginAs from './pages/LoginAs';
 import ClientLogin from './pages/ClientLogin';
-import ClinicianLogin from './pages/ClinicianLogin';  
+import ClinicianLogin from './pages/ClinicianLogin'; 
+import ClinicianHome from './pages/ClinicianHome'; 
+import SelectClient from './pages/SelectClient';
+import ClientExapmle from './pages/ClientExample';
 // For icons, we can use a library like react-icons. Here, I'll use placeholders.
 
 const App = () => {
@@ -18,8 +21,9 @@ const App = () => {
         {/* for now, the client home page is the base route,
          but need to change to allow separate clinician home
          and make LoginAs the base*/}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LoginAs />} />
  
+        <Route path="/client-home" element={<ClientHome/>} />
         <Route path="/contact-therapist"  element={<ContactTherapist/>} />
         <Route path="/notifications"  element={<Notifications/>} />
         <Route path="/settings"  element={<Settings/>} />
@@ -29,7 +33,9 @@ const App = () => {
         <Route path="/login-as"  element={<LoginAs />} />
         <Route path="/login-client"  element={<ClientLogin />} />
         <Route path="/login-clinician"  element={<ClinicianLogin />} />
-       
+        <Route path="/clinician-home"  element={<ClinicianHome />} />
+        <Route path="/select-client"  element={<SelectClient />} />
+        <Route path="/client-example"  element={<ClientExapmle />} />
         {/* </div> */}
       
       </Routes>
