@@ -5,6 +5,9 @@ module.exports = {
   theme: {
    
     extend: {
+      scale: {
+        '80': '.80',
+      },
       borderRadius: {
         'half': '50%',
       },
