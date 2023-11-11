@@ -14,7 +14,7 @@ function MessageWithTime({className, icon, message1, message2, time}) {
           {time}
         </div>
       </div> 
-      <hr class="h-px mt-8 mb-2  bg-black border-0 opacity-40 w-full"></hr> 
+      <hr class="h-px mt-8  bg-black border-0 opacity-40 w-full"></hr> 
     </div> 
   );
 }
