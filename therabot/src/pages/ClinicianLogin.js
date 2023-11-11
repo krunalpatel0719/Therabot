@@ -19,7 +19,7 @@ function ClinicianLogin() {
             <input type="text" class="w-full px-4 py-4 border border-black rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Username: " />
             <input type="text" class="w-full px-4 py-4 border border-black rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Password: " />
             </div>
-            <Link to="/" className="w-full drop-shadow-md shadow-lg bg-BUTTON_GREY opacity-90 py-4 md:py-6 lg:py-8 mt-8 mb-12 mx-24  text-3xl text-black font-inter  font-bold rounded-full">
+            <Link to="/clinician-home" className="w-full drop-shadow-md shadow-lg bg-BUTTON_GREY opacity-90 py-4 md:py-6 lg:py-8 mt-8 mb-12 mx-24  text-3xl text-black font-inter  font-bold rounded-full">
               <button className="w-full">
                 Login
               </button>
