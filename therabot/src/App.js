@@ -1,9 +1,11 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ClientHome from './pages/ClientHome';
 import ContactTherapist from './pages/ContactTherapist';
 import Notifications from './pages/Notifications';
 import Notes from './pages/Notes';
+import NewNote from './pages/NewNote';
 import Settings from './pages/Settings';
 import Exercises from './pages/Exercises';
 import LoginAs from './pages/LoginAs';
@@ -14,9 +16,11 @@ import SelectClient from './pages/SelectClient';
 import ClientExapmle from './pages/ClientExample';
 import ClinicianAppt from './pages/ClinicianAppt'
 import ClinicianExercises from './pages/ClinicianExercises'
+
 // For icons, we can use a library like react-icons. Here, I'll use placeholders.
 
 const App = () => {
+  const [messages, setMessages] = useState([]);
   return (
     <Router>
         <Routes>
@@ -29,7 +33,9 @@ const App = () => {
         <Route path="/contact-therapist"  element={<ContactTherapist/>} />
         <Route path="/notifications"  element={<Notifications/>} />
         <Route path="/settings"  element={<Settings/>} />
-        <Route path="/notes"  element={<Notes/>} />
+        <Route path="/notes" element={<Notes messages={messages} />} />
+        <Route path="/new_note" element={<NewNote setMessages={setMessages} />} />
+       
         <Route path="/exercises"  element={<Exercises/>} />
         <Route path="/contact-therapist"  element={<ContactTherapist />} />
         <Route path="/login-as"  element={<LoginAs />} />
@@ -40,6 +46,7 @@ const App = () => {
         <Route path="/client-example"  element={<ClientExapmle />} />
         <Route path="/clinician-appointment"  element={<ClinicianAppt />} />
         <Route path="/clinician-exercises"  element={<ClinicianExercises />} />
+        
         {/* </div> */}
       
       </Routes>
