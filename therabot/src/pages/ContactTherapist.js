@@ -20,15 +20,18 @@ function ContactTherapist() {
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
           <div className="relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8">
             <Link to="/client-home" className="absolute -left-12 sm:-left-24 bottom-1 sm:bottom-2 text-white"><ArrowLeftIcon className = "h-8 w-8"/></Link>
-            Contact Therapist
+            <p className= 'text-3xl sm:text-5xl'> Contact Therapist </p>
           </div>
           <div className = "mb-36 mt-24  sm:mb-24 flex flex-col items-center">
            <CircleIcon className = 'w-36 h-36 sm:w-48 sm:h-48' icon=<UserIcon className = 'w-24 h-24 sm:w-36 sm:h-36 mt-16'/> />
             <h2 className = 'pt-4 text-xl font-bold'> Dr. Therapist </h2>
+            
           </div>
         
           <div className="flex flex-col space-y-12 mb-48 w-full ">
-            <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl  font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<ChatBubbleBottomCenterIcon className = 'w-8 h-8'/> label='Text Therapist'/>
+            <Link to="/text-therapist" className=""> 
+              <ContactTherapistButtons className = 'inline-block bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl  font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<ChatBubbleBottomCenterIcon className = 'w-8 h-8'/> label='Text Therapist'/>
+            </Link>
             <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl  font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<PhoneIcon className = 'w-8 h-8'/> label='Call Therapist'/>
             <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl  font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<CalendarIcon className = 'w-8 h-8'/> label='Schedule Appointment'/>
             <ContactTherapistButtons className = 'bg-CONTACT_THERAPIST_BUTTON_BLUE text-black text-2xl font-semibold pt-2 pb-2 sm:pt-4 sm:pb-4' icon =<ClipboardIcon className = 'w-8 h-8'/> label='View Feedback'/>

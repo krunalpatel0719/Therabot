@@ -3,11 +3,12 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-   
+
     extend: {
       scale: {
         '80': '.80',
       },
+      scrollbar: ['rounded', 'dark'],
       borderRadius: {
         'half': '50%',
       },
@@ -33,6 +34,11 @@ module.exports = {
 
     }
    },
-  plugins: [],
+   plugins: [
+    require('tailwind-scrollbar'),
+  ],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ClientHome from './pages/ClientHome';
 import ContactTherapist from './pages/ContactTherapist';
+import TextTherapist from './pages/TextTherapist';
 import Notifications from './pages/Notifications';
 import Notes from './pages/Notes';
 import NewNote from './pages/NewNote';
@@ -20,7 +21,8 @@ import ClinicianExercises from './pages/ClinicianExercises'
 // For icons, we can use a library like react-icons. Here, I'll use placeholders.
 
 const App = () => {
-  const [messages, setMessages] = useState([]);
+  const [notes, setNotes] = useState([]);
+ 
   return (
     <Router>
         <Routes>
@@ -33,11 +35,17 @@ const App = () => {
         <Route path="/contact-therapist"  element={<ContactTherapist/>} />
         <Route path="/notifications"  element={<Notifications/>} />
         <Route path="/settings"  element={<Settings/>} />
-        <Route path="/notes" element={<Notes messages={messages} />} />
-        <Route path="/new_note" element={<NewNote setMessages={setMessages} />} />
-       
+      
+     
+<Route path="/notes" element={<Notes notes={notes}/>} />
+<Route path="/new_note/:noteId" element={<NewNote setNotes={setNotes} notes={notes}/>} />
+<Route path="/new_note" element={<NewNote setNotes={setNotes} notes={notes}/>} />
+
+        {/* <Route path="/new_note" element={<NewNote setNotes={setNotes} notes={notes}/>} />
+        <Route path="/new_note/:noteId" component={NewNote} /> */}
         <Route path="/exercises"  element={<Exercises/>} />
         <Route path="/contact-therapist"  element={<ContactTherapist />} />
+        <Route path="/text-therapist"  element={<TextTherapist />} />
         <Route path="/login-as"  element={<LoginAs />} />
         <Route path="/login-client"  element={<ClientLogin />} />
         <Route path="/login-clinician"  element={<ClinicianLogin />} />

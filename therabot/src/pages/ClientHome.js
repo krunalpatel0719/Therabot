@@ -19,7 +19,7 @@ function ClientHome() {
           <div className="text-5xl font-bold text-white z-20 pt-4 md:pt-8 relative">Home</div>
 
           {/* 2x2 Grid of Buttons */}
-          <div className="grid grid-cols-2 gap-32 mt-4 pr-16 pl-16 pt-16">
+          <div className="grid grid-cols-2 gap-x-48 gap-y-32 sm:gap-y-32 mt-4 pr-16 pl-16 pt-16 scale-75 sm:scale-100">
             <Link to="/notes">
              <ButtonWithLabel icon=<ClipboardDocumentListIcon className="w-36 h-36"/> label="Notes" />
             </Link>
@@ -36,7 +36,7 @@ function ClientHome() {
           </div>
 
           {/* Contact Therapist Button */}
-          <Link to="/contact-therapist" className="w-full drop-shadow-md shadow-lg bg-BUTTON_GREY opacity-90 py-4 md:py-6 lg:py-8 mt-8 mb-12  text-3xl text-black font-inter  font-bold rounded-full">
+          <Link to="/contact-therapist" className="scale-90 md:scale-100 w-full drop-shadow-md shadow-lg bg-BUTTON_GREY opacity-90 py-4 md:py-6 lg:py-8 sm:mt-8 mb-12  text-3xl text-black font-inter  font-bold rounded-full">
             <button className="w-full">
               Contact Therapist
             </button>

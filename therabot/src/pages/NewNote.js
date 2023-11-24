@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from 'react';
+import { useLocation, useParams, useNavigate} from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import { Link } from "react-router-dom";
 
 import Eclipse from "../components/Eclipse";
@@ -9,21 +10,39 @@ import { BsSticky } from "react-icons/bs";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import MessageWithTime from "../components/MessageWithTime";
 
-function NewNote({setMessages}) {
-  const [message, setMessage] = useState("Type your message here");
+function NewNote({setNotes, notes}) {
+
+  const { noteId } = useParams(); // Declare noteId here
+  const navigate = useNavigate();
+
+  const [currentNoteId, setCurrentNoteId] = useState(noteId);
+  const [message, setMessage] = useState("Type your message here");  
   const [messages, set_Messages] = useState([]);
+  const [tempEditedMessage, setTempEditedMessage] = useState("");
   const [editingMessage, setEditingMessage] = useState(null);
   const [editedMessage, setEditedMessage] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [isEditingTitle, setIsEditingTitle] = useState(false);
-  const [title, setTitle] = useState('New Note');
+  const initialTitleNumber = notes.length + 1;
+  const [title, setTitle] = useState(`Note ${initialTitleNumber}`);
+  useEffect(() => {
+    if (currentNoteId) {
+      const noteToEdit = notes.find(note => note.id === currentNoteId);
+      if (noteToEdit) {
+        setTitle(noteToEdit.title);
+        set_Messages(noteToEdit.messages);
+      }
+    } else {
+      setTitle(`Note ${notes.length + 1}`);
+      set_Messages([]);
+    }
+  }, [currentNoteId, notes]);
+ 
   const handleTitleClick = () => {
     setIsEditingTitle(true);
   };
 
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-  };
+  
 
   const handleTitleBlur = () => {
     setIsEditingTitle(false);
@@ -34,21 +53,88 @@ function NewNote({setMessages}) {
       setIsEditingTitle(false);
     }
   };
+
+  function updateNoteTitle(id, newTitle) {
+    setNotes((prevNotes) => {
+      return prevNotes.map((note) => {
+        if (note.id === id) {
+          return { ...note, title: newTitle };
+        } else {
+          return note;
+        }
+      });
+    });
+  }
+  
+  const handleTitleChange = (e) => {
+    const newTitle = e.target.innerText;
+    setTitle(newTitle);
+  
+    if (currentNoteId) {
+      // Update the title in the notes array for the existing note
+      setNotes(prevNotes => {
+        return prevNotes.map(note => 
+          note.id === currentNoteId ? { ...note, title: newTitle } : note
+        );
+      });
+    }
+    // No need to update the notes array for a new note
+    // The new title will be included when the note is eventually created
+  };
+ 
   const handleSend = () => {
     if (message.trim() !== "") {
-      set_Messages((messages) => [...messages, message]);
-      setMessages((messages) => [...messages, message]);
+      const newMessages = [...messages, message];
+      set_Messages(newMessages);
+      
+      setNotes(prevNotes => {
+        if (currentNoteId) {
+          // Update the existing note
+          return prevNotes.map(note =>
+            note.id === currentNoteId ? { ...note, messages: newMessages } : note
+          );
+        } else {
+          // Add a new note
+          const newNoteId = uuidv4();
+          setCurrentNoteId(newNoteId); // Update the currentNoteId
+          const currentTimestamp = new Date();
+          return [...prevNotes, { id: newNoteId, title, messages: newMessages, timestamp: currentTimestamp }];
+        }
+      });
+
+      setMessage(""); // Clear the message input field after sending
     }
   };
   const handleEdit = (index) => {
     setEditingMessage(index);
     setEditedMessage(messages[index]);
+    setTempEditedMessage(messages[index]); // Set the temporary edited message
     setIsEditing(true);
   };
 
-  const handleUpdate = (newMessage) => {
-    setEditedMessage(newMessage);
+  const handleChangeEditedMessage = (e) => {
+    setTempEditedMessage(e.target.value);
   };
+
+  const handleDoneEditing = () => {
+    handleUpdate(tempEditedMessage);
+    setTempEditedMessage(""); // Reset the temporary edited message
+  };
+
+      // setEditedMessage(newMessage);
+      const handleUpdate = (newMessage) => {
+        const updatedMessages = messages.map((msg, index) =>
+          index === editingMessage ? newMessage : msg
+        );
+      
+        set_Messages(updatedMessages);
+        setNotes(prevNotes => prevNotes.map(note => 
+          note.title === title ? { ...note, messages: updatedMessages } : note
+        ));
+      
+        setIsEditing(false);
+        setEditingMessage(null);
+      };
   return (
     <div className="bg-gradient-to-b from-NOTES_GRADIENT to-white ">
       <div className="overflow-x-hidden relative flex justify-center items-center h-screen w-screen ">
@@ -68,7 +154,8 @@ function NewNote({setMessages}) {
   <div
     contentEditable={true}
     suppressContentEditableWarning={true}
-    onBlur={(e) => setTitle(e.target.innerText)}
+    onBlur={handleTitleChange}
+    
     onKeyDown={(e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
@@ -76,18 +163,21 @@ function NewNote({setMessages}) {
       }
     }}
   >
-    {title}
+  {title}
+    
   </div>
-</div>m 
-          <div className="mt-24 sm:mt-32 flex flex-col space-y-8 scale-75 sm:scale-100 bg-white min-w-64 w-auto max-h-[46rem] rounded-xl overflow-y-auto p-4">
-            {messages.map((msg, index) => (
+</div>
+      <div 
+        className="scrollbar scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-gray-500 scrollbar-track-gray-200 mt-24 sm:mt-32 flex flex-col space-y-8 scale-75 sm:scale-100 bg-gray-100 min-w-[500px] sm:min-w-[640px] w-auto sm:max-h-[46rem] rounded-xl overflow-y-auto p-4" 
+        style={{ minHeight: '500px' }}
+      > {messages.map((msg, index) => (
               <div
                 key={index}
                 className="mb-2 flex justify-between items-center"
               >
-                <div className="pr-2 overflow-auto">{msg}</div>
+                <div className="pr-2 overflow-auto font-inter font-medium text-xl">{msg}</div>
                 <PencilIcon
-                  className="h-5 w-5 text-gray-500 cursor-pointer"
+                  className="ml-4 h-5 w-5 text-gray-500 cursor-pointer"
                   onClick={() => handleEdit(index)}
                 />
               </div>
@@ -120,28 +210,21 @@ function NewNote({setMessages}) {
         </div>
       </div>
       {isEditing && (
-        <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-4 rounded">
-            <input
-              value={editedMessage}
-              onChange={(e) => handleUpdate(e.target.value)}
-            />
-            <button
-              className="cursor-pointer"
-              onClick={() => {
-                const newMessages = [...messages];
-                newMessages[editingMessage] = editedMessage;
-
-                set_Messages(newMessages);
-
-                setIsEditing(false);
-              }}
-            >
-              Done
-            </button>
-          </div>
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="bg-white p-4 rounded">
+          <input
+            value={tempEditedMessage}
+            onChange={handleChangeEditedMessage}
+          />
+          <button
+            className="cursor-pointer"
+            onClick={handleDoneEditing}
+          >
+            Done
+          </button>
         </div>
-      )}
+      </div>
+    )}
     </div>
   );
 }
