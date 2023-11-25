@@ -29,7 +29,7 @@ function Notes({notes}) {
             Notes 
           </div>
         
-       <div className="scrollbar scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-gray-500 scrollbar-track-gray-200 mt-24 sm:mt-32 flex flex-col space-y-8 scale-75 sm:scale-100 overflow-auto max-h-[calc(100vh-175px)] sm:max-h-[calc(100vh-350px)]">
+       <div className="scrollbar-none  mt-8 sm:mt-32 flex flex-col space-y-8 scale-75 sm:scale-100 overflow-auto max-h-[calc(100vh-175px)] sm:max-h-[calc(100vh-350px)]">
        {notes.map((note, index) => (
  <div className='pr-8 ml-4' key={note.id || `note-${index} `}>
     <Link className = 'w-auto' to={`/new_note/${note.id}`}>

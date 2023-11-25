@@ -10,7 +10,7 @@ function MessageWithTime({className, icon, message1, message2, time}) {
           <p className="text-2xl sm:text-3xl font-bold">{message1}</p>
           <p className="mt-2 text-sm font-bold flex-wrap">{message2}</p>
         </div>
-        <div className="mt-5 pl-12 text-sm text-gray-500">
+        <div className="mt-5 pl-12 text-sm text-gray-500 whitespace-nowrap">
           {time}
         </div>
       </div> 
