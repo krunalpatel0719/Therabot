@@ -19,6 +19,12 @@ import ClientExapmle from "./pages/ClientExample";
 import ClinicianAppt from "./pages/ClinicianAppt";
 import ClinicianExercises from "./pages/ClinicianExercises";
 
+
+import {CalendarIcon} from '@heroicons/react/24/solid';
+import {BellAlertIcon} from '@heroicons/react/24/solid';
+import {EnvelopeIcon} from '@heroicons/react/24/solid';
+
+
 // For icons, we can use a library like react-icons. Here, I'll use placeholders.
 
 const App = () => {
@@ -27,6 +33,14 @@ const App = () => {
     { text: "Hey User! How are you doing?", sender: "therapist" },
     // { text: "I'm doing great, thanks for asking! ", sender: "user" }
     // ... more messages
+  ]);
+  const [notifications, setNotifications] = useState([
+    { icon: <EnvelopeIcon className ='w-16 h-16'/>, message1: 'Messages', message2: 'Therabot sent a new message.',  time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })},
+  
+    { icon: <CalendarIcon className ='w-16 h-16'/>, message1: 'Appointments', message2: 'You have an appointment at 6 PM today.', time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })},
+    { icon: <CalendarIcon className ='w-16 h-16'/>, message1: 'Appointments', message2: 'Your appointment at 5 PM has been cancelled.', time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })},
+    { icon: <BellAlertIcon className ='w-16 h-16'/>, message1: 'Reminders', message2: 'Therabot session today at 2 PM.',  time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })}
+    // ... other notifications ...
   ]);
   return (
     <Router>
@@ -38,7 +52,7 @@ const App = () => {
 
         <Route path="/client-home" element={<ClientHome />} />
         <Route path="/contact-therapist" element={<ContactTherapist />} />
-        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/notifications" element={<Notifications notifications={notifications}/>} />
         <Route path="/settings" element={<Settings />} />
 
         <Route path="/notes" element={<Notes notes={notes} />} />
@@ -62,7 +76,9 @@ const App = () => {
           }
         />
         <Route path="/feedback" element={<Feedback />} />
-        <Route path="/schedule-appointment" element={<ScheduleAppointment />} />
+        <Route path="/schedule-appointment" 
+         element={<ScheduleAppointment  setNotifications={setNotifications}/>} 
+        />
         <Route path="/login-as" element={<LoginAs />} />
         <Route path="/login-client" element={<ClientLogin />} />
         <Route path="/login-clinician" element={<ClinicianLogin />} />

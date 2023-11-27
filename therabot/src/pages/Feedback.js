@@ -20,14 +20,14 @@ function Feedback() {
         <Eclipse className="bg-blue-500 opacity-80 " />
 
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
-          <div className="relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">
+        <div className="flex justify-center items-center relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">
             <Link
               to="/contact-therapist"
-              className="absolute -left-12 sm:-left-24 bottom-1 sm:bottom-2 text-white "
+              className="absolute -left-12 sm:-left-20 md:-left-28 text-white"
             >
-              <ArrowLeftIcon className="h-8 w-8" />
+              <ArrowLeftIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
             </Link>
-            Feedback
+            <p className=" sm:text-5xl"> Feedback </p>
           </div>
           <div className="flex-1 overflow-auto mb-20 md:mb-28 mt-16 scrollbar-none">
             <div className="sm:mt-16 flex-1 p-2 space-y-4 md:space-y-10 overflow-auto">
@@ -36,7 +36,7 @@ function Feedback() {
                   key={index}
                   className="flex flex-col items-start justify-start mb-4"
                 >
-                  <div className="shadow-xl drop-shadow-lg max-w-xs md:max-w-xl lg:max-w-2xl p-2 pl-3 ml-2 text-base rounded-2xl bg-white border-gray-700 border">
+                  <div className="shadow-xl drop-shadow-lg max-w-xs md:max-w-xl lg:max-w-2xl  lg:w-full p-2 pl-3 ml-2 text-base rounded-2xl bg-white border-gray-700 border">
                     <p className="whitespace-pre-wrap break-words font-semibold md:text-lg">
                       {message.text}
                     </p>
