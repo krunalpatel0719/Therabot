@@ -12,8 +12,12 @@ import ClinicianLogin from './pages/ClinicianLogin';
 import ClinicianHome from './pages/ClinicianHome'; 
 import SelectClient from './pages/SelectClient';
 import ClientExapmle from './pages/ClientExample';
-import ClinicianAppt from './pages/ClinicianAppt'
-import ClinicianExercises from './pages/ClinicianExercises'
+import ClinicianAppt from './pages/ClinicianAppt';
+import ClinicianExercises from './pages/ClinicianExercises';
+import ClinicianProgress from './pages/ClinicianProgress';
+import ApptNotes from './pages/ApptNotes';
+import ClinicianSettings from './pages/ClinicianSettings';
+
 // For icons, we can use a library like react-icons. Here, I'll use placeholders.
 
 const App = () => {
@@ -40,6 +44,9 @@ const App = () => {
         <Route path="/client-example"  element={<ClientExapmle />} />
         <Route path="/clinician-appointment"  element={<ClinicianAppt />} />
         <Route path="/clinician-exercises"  element={<ClinicianExercises />} />
+        <Route path="/clinician-progress"  element={<ClinicianProgress />} />
+        <Route path="/appointment-notes"  element={<ApptNotes />} />
+        <Route path="/clinician-settings"  element={<ClinicianSettings />} />
         {/* </div> */}
       
       </Routes>

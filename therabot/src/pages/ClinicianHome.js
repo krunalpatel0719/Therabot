@@ -24,10 +24,10 @@ function ClientHome() {
             {/* 2x2 Grid of Buttons */}
             <div className="grid grid-cols-2 gap-24 mb-24 pr-16 pl-16 pt-16 my-50">
 
-                <Link to="/settings">
+                <Link to="/clinician-settings">
                 <ButtonWithLabel icon=<Cog8ToothIcon className="w-36 h-36"/>label="Settings" />
                 </Link>
-                <Link to="/notifications">
+                <Link to="">
                 <ButtonWithLabel icon=<BellAlertIcon className="w-36 h-36"/> label="Notifications" />
             </Link>
         
