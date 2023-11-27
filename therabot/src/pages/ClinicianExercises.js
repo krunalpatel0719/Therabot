@@ -15,7 +15,7 @@ function Exercises() {
         
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
           <div className="relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">
-            <Link to="/client-home" className="absolute -left-12 sm:-left-24 bottom-1 sm:bottom-2 text-white "><ArrowLeftIcon className = "h-8 w-8"/></Link>
+            <Link to="/clinician-home" className="absolute -left-12 sm:-left-24 bottom-1 sm:bottom-2 text-white "><ArrowLeftIcon className = "h-8 w-8"/></Link>
             Exercises 
           </div>
       

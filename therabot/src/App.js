@@ -19,6 +19,11 @@ import SelectClient from "./pages/SelectClient";
 import ClientExapmle from "./pages/ClientExample";
 import ClinicianAppt from "./pages/ClinicianAppt";
 import ClinicianExercises from "./pages/ClinicianExercises";
+import ClinicianProgress from './pages/ClinicianProgress';
+import ApptNotes from './pages/ApptNotes';
+import ClinicianSettings from './pages/ClinicianSettings';
+import ClinicianNotifications from './pages/ClinicianNotifs'
+import ClinicianNotes from './pages/ClinicianNotes'
 
 
 import {CalendarIcon} from '@heroicons/react/24/solid';
@@ -47,9 +52,6 @@ const App = () => {
     <DarkModeProvider>
     <Router>
       <Routes>
-        {/* for now, the client home page is the base route,
-         but need to change to allow separate clinician home
-         and make LoginAs the base*/}
         <Route path="/" element={<LoginAs />} />
 
         <Route path="/client-home" element={<ClientHome />} />
@@ -89,6 +91,12 @@ const App = () => {
         <Route path="/client-example" element={<ClientExapmle />} />
         <Route path="/clinician-appointment" element={<ClinicianAppt />} />
         <Route path="/clinician-exercises" element={<ClinicianExercises />} />
+        <Route path="/clinician-progress"  element={<ClinicianProgress />} />
+        <Route path="/appointment-notes"  element={<ApptNotes />} />
+        <Route path="/clinician-settings"  element={<ClinicianSettings />} />
+        <Route path="/clinician-notifications"  element={<ClinicianNotifications />} />
+        <Route path="/clinician-notes"  element={<ClinicianNotes />} />
+        
 
         {/* </div> */}
       </Routes>
