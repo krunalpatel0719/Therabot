@@ -15,9 +15,10 @@ function Feedback() {
     // ... more messages
   ]);
   return (
-    <div className="bg-gradient-to-b from-BACKGROUND_BLUE to-white ">
+    <div className="bg-gradient-to-b from-BACKGROUND_BLUE dark:from-[#1b64c4] to-white dark:to-gray-800 ">
       <div className="overflow-x-hidden relative flex justify-center items-center h-screen w-screen ">
-        <Eclipse className="bg-blue-500 opacity-80 " />
+        <Eclipse className = "bg-blue-500 dark:bg-sky-900 opacity-70 "/>
+        
 
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
         <div className="flex justify-center items-center relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">
@@ -36,11 +37,11 @@ function Feedback() {
                   key={index}
                   className="flex flex-col items-start justify-start mb-4"
                 >
-                  <div className="shadow-xl drop-shadow-lg max-w-xs md:max-w-xl lg:max-w-2xl  lg:w-full p-2 pl-3 ml-2 text-base rounded-2xl bg-white border-gray-700 border">
+                  <div className="shadow-xl drop-shadow-lg max-w-xs md:max-w-xl lg:max-w-2xl  lg:w-full p-2 pl-3 ml-2 text-base rounded-2xl bg-white dark:bg-gray-700 dark:text-white dark:border-white border-gray-700 border">
                     <p className="whitespace-pre-wrap break-words font-semibold md:text-lg">
                       {message.text}
                     </p>
-                    <p className="text-right text-xs md:text-sm text-gray-600 pt-2">{message.time}</p>
+                    <p className="text-right text-xs md:text-sm text-gray-600 dark:text-gray-300 pt-2">{message.time}</p>
                   </div>
                 </div>
               ))}

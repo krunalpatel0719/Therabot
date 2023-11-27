@@ -59,8 +59,8 @@ function Calendar({ selectedDate, onDateChange }) {
   };
 
   return (
-    <div className="pb-2 max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
-      <div className="flex justify-between items-center pb-6 font-inter">
+    <div className="pb-2 max-w-sm sm:max-w-md lg:max-w-lg mx-auto dark:text-white">
+      <div className="flex justify-between items-center pb-6 font-inter ">
         
         <button className='text-3xl sm:text-5xl' onClick={() => changeMonth(-1)}> <ChevronLeftIcon className = 'h-8 w-8'/> </button>
         <span className='text-2xl sm:text-3xl font-bold '>{selectedDate.toLocaleString('default', { month: 'long' })} {selectedDate.getFullYear()}</span>
@@ -73,7 +73,7 @@ function Calendar({ selectedDate, onDateChange }) {
        {daysInMonth.map((day, index) => (
         <button
           key={index}
-          className={`text-center sm:text-xl lg:text-2xl font-semibold p-2 sm:p-4 lg:p-5 cursor-pointer flex items-center justify-center ${isSelectedDay(day, selectedDate) ? 'bg-blue-500 text-white' : day.isSameMonth ? 'bg-gray-200' : 'cursor-default'}`}
+          className={`text-center sm:text-xl lg:text-2xl font-semibold p-2 sm:p-4 lg:p-5 cursor-pointer flex items-center justify-center ${isSelectedDay(day, selectedDate) ? 'bg-blue-500 dark:bg-sky-800 text-white' : day.isSameMonth ? 'bg-gray-200 dark:bg-gray-500 ' : 'cursor-default'}`}
           onClick={day.isSameMonth ? () => onDateChange(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day.date)) : undefined}
           >
           {day.date}

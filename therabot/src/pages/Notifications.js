@@ -13,9 +13,9 @@ function Notifications({notifications}) {
   notifications.sort((a, b) => new Date(b.time) - new Date(a.time));
   return (
 
-    <div className="bg-gradient-to-b from-NOTIFICATIONS_GRADIENT to-white ">
+    <div className="bg-gradient-to-b from-NOTIFICATIONS_GRADIENT dark:from-[#669271] to-white dark:to-[#0b3f25] ">
       <div className="overflow-x-hidden relative flex justify-center items-center h-screen w-screen ">
-        <Eclipse className = "bg-NOTIFICATIONS_ECLIPSE opacity-20 "/>
+        <Eclipse className = "bg-NOTIFICATIONS_ECLIPSE dark:bg-[#246144] opacity-20 dark:opacity-60"/>
         
         <div className="flex flex-col h-screen justify-start items-center  z-10 relative">
         <div className="flex justify-center items-center relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">

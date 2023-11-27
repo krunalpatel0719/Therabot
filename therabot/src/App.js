@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { DarkModeProvider } from './context/DarkModeContext';
 import ClientHome from "./pages/ClientHome";
 import ContactTherapist from "./pages/ContactTherapist";
 import TextTherapist from "./pages/TextTherapist";
@@ -43,6 +44,7 @@ const App = () => {
     // ... other notifications ...
   ]);
   return (
+    <DarkModeProvider>
     <Router>
       <Routes>
         {/* for now, the client home page is the base route,
@@ -91,6 +93,7 @@ const App = () => {
         {/* </div> */}
       </Routes>
     </Router>
+    </DarkModeProvider>
   );
 };
 

@@ -9,9 +9,9 @@ import {ArrowLeftIcon} from '@heroicons/react/24/solid';
 
 function Exercises() {
   return (
-    <div className="bg-gradient-to-b from-EXERCISES_GRADIENT to-white ">
+    <div className="bg-gradient-to-b from-EXERCISES_GRADIENT dark:from-[#fadc79] to-white dark:to-[#66510c]  ">
       <div className="overflow-x-hidden relative flex justify-center items-center h-screen w-screen ">
-        <Eclipse className = "bg-EXERCISES_ECLIPSE opacity-20 "/>
+        <Eclipse className = "bg-EXERCISES_ECLIPSE dark:from-[#fdb418] opacity-20 "/>
         
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
         <div className="flex justify-center items-center relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">

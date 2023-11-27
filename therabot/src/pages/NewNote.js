@@ -145,10 +145,9 @@ function NewNote({ setNotes, notes }) {
     setEditingMessage(null);
   };
   return (
-    <div className="bg-gradient-to-b from-NOTES_GRADIENT to-white ">
-      <div className="overflow-x-hidden relative flex justify-center items-center h-screen w-screen ">
-        <Eclipse className="bg-NOTES_ECLIPSE opacity-20 " />
-
+    <div className="bg-gradient-to-b from-NOTES_GRADIENT dark:from-[#38ca9a] to-white dark:to-gray-700">
+    <div className="overflow-x-hidden relative flex justify-center items-center h-screen w-screen ">
+      <Eclipse className = "bg-NOTES_ECLIPSE dark:opacity-60 opacity-20  "/>
         <div className="flex flex-col h-screen justify-start items-center  z-10 relative">
        
           <div className="flex justify-center items-center relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">
@@ -177,7 +176,7 @@ function NewNote({ setNotes, notes }) {
             </div>
           </div>
           <div
-            className="scrollbar-none  mt-12 sm:mt-32 flex flex-col space-y-8 scale-75 sm:scale-100 bg-gray-100 min-w-[500px] sm:min-w-[640px] w-auto sm:max-h-[46rem] rounded-xl overflow-y-auto p-4"
+            className="scrollbar-none  mt-12 sm:mt-32 flex flex-col space-y-8 scale-75 sm:scale-100 dark:bg-gray-600 bg-gray-100 min-w-[500px] sm:min-w-[640px] w-auto sm:max-h-[46rem] rounded-xl overflow-y-auto p-4"
             style={{ minHeight: "500px" }}
           >
             {" "}
@@ -186,34 +185,34 @@ function NewNote({ setNotes, notes }) {
                 key={index}
                 className="mb-2 flex justify-between items-center"
               >
-                <div className="pr-2 overflow-auto font-inter font-medium text-xl">
+                <div className="pr-2 overflow-auto font-inter font-medium text-xl dark:text-white  ">
                   {msg}
                 </div>
                 <PencilIcon
-                  className="ml-4 h-5 w-5 text-gray-500 cursor-pointer"
+                  className="ml-4 h-5 w-5 text-gray-500 dark:text-white cursor-pointer"
                   onClick={() => handleEdit(index)}
                 />
               </div>
             ))}
           </div>
           <div className="absolute bottom-0 sm:w-screen flex justify-center">
-            <div className="fixed inset-x-0 bottom-0 p-4 bg-white flex items-center rounded-t-3xl shadow">
+            <div className="fixed inset-x-0 bottom-0 p-4 bg-white dark:bg-gray-700 flex items-center rounded-t-3xl shadow">
               <input
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={(event) => {
+                onKeyDown={(event) => {
                   if (event.key === "Enter") {
                     handleSend();
                     event.preventDefault();
                   }
                 }}
                 placeholder="Type Your Message"
-                className="flex-grow p-2 mr-4 rounded-full border-2 border-gray-300 outline-NOTES_BUTTON "
+                className="flex-grow p-2 mr-4 rounded-full border-2 dark:placeholder-white dark:text-white dark:bg-gray-600 border-gray-300 dark:border-white  outline-NOTES_BUTTON "
               />
               <button
                 onClick={handleSend}
-                className="p-2 rounded-full bg-NOTES_BUTTON  text-white shadow-lg flex-shrink-0"
+                className="p-2 rounded-full bg-NOTES_BUTTON   text-white shadow-lg flex-shrink-0"
               >
                 <PaperAirplaneIcon className="h-6 w-6 transform -rotate-45" />
               </button>
@@ -221,16 +220,27 @@ function NewNote({ setNotes, notes }) {
           </div>
         </div>
       </div>
+
+
+      
+
+
       {isEditing && (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-4 rounded-3xl ">
+          <div className="bg-white dark:bg-gray-500 p-4 rounded-3xl ">
             <input
               type="text"
-              className="outline-NOTES_BUTTON"
+              className="outline-NOTES_BUTTON dark:text-white dark:bg-gray-500 "
               value={tempEditedMessage}
               onChange={handleChangeEditedMessage}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  handleDoneEditing();
+                  event.preventDefault();
+                }
+              }}
             />
-            <button className="pl-4" onClick={handleDoneEditing}>
+            <button className="pl-4 dark:text-white" onClick={handleDoneEditing}>
               Done
             </button>
           </div>

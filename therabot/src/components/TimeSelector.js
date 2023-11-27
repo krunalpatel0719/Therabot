@@ -6,7 +6,7 @@ const TimeSelector = ({ availableTimes, selectedTime, onTimeChange }) => {
       {availableTimes.map(time => (
         <button
           key={time}
-          className={`p-2 lg:p-4 m-1 rounded-lg border hover:bg-blue-100 ${selectedTime === time ? 'hover:bg-blue-500 bg-blue-500 text-white' : 'border-black'}`}
+          className={`p-2 lg:p-4 m-1 rounded-lg border dark:border-white ${selectedTime === time ? ' bg-blue-500 dark:bg-sky-800 text-white' : 'border-black dark:bg-gray-500  '}`}
           onClick={() => onTimeChange(time)}
         >
           {time}
