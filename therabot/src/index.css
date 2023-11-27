@@ -6,3 +6,14 @@
 @import "tailwindcss/utilities";
 
 @import "~@fontsource/inter/index.css";
+
+.slider-thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 36px; /* Width of the thumb */
+    height: 36px; /* Height of the thumb */
+    border-radius: 24px; /* Make it circular */
+    background: #eab308; /* Thumb color */
+    cursor: pointer; /* Cursor on hover */
+  }
+  

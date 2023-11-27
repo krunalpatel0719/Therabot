@@ -50,7 +50,7 @@ function Settings() {
         max="100"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="accent-yellow-500 w-full h-4 range-lg bg-yellow-200 border-yellow-500 border-2 rounded-lg appearance-none cursor-pointer "
+        className="slider-thumb accent-yellow-500 w-full h-4 range- bg-yellow-200  rounded-lg appearance-none cursor-pointer "
       />
       <div className="flex items-center h-12 w-12"> {iconRight}</div>
     </div>
