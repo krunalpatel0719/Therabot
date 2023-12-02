@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Eclipse from '../components/Eclipse'
 import {ArrowLeftIcon} from '@heroicons/react/24/solid';
-import {CalendarIcon} from '@heroicons/react/24/solid';
-import {BellAlertIcon} from '@heroicons/react/24/solid';
-import {EnvelopeIcon} from '@heroicons/react/24/solid';
+
 import MessageWithTime from '../components/MessageWithTime';
 
 function Notifications({notifications}) {
