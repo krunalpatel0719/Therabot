@@ -1,0 +1,12 @@
+{
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": ["*.json"],
+          "installCommand": "yarn install --production=false"
+        }
+      }
+    ]
+  }
