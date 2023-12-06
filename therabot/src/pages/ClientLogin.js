@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {ArrowLeftIcon} from '@heroicons/react/24/solid';
 
 import Eclipse from '../components/Eclipse'
 
@@ -10,8 +11,7 @@ function ClientLogin() {
 
         <Eclipse className = "bg-ECLIPSE_BLUE opacity-50"/>
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
-          <div className="text-5xl font-bold text-white z-20 pt-4 md:pt-8 relative">Login</div>
-
+        <div className="text-5xl font-bold text-white z-20 pt-4 md:pt-8 relative"><Link to="/login-as" className="absolute -left-12 sm:-left-24 bottom-1 sm:bottom-2 text-white "><ArrowLeftIcon className = "h-8 w-8"/></Link>Login</div>
 
           {/* Login as Client Button */}
           <div class="container mx-auto px-40px my-80 flex flex-col items-center">

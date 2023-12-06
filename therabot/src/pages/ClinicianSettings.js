@@ -13,10 +13,11 @@ import {
 } from "@heroicons/react/24/outline";
 
 function Settings() {
-  const [mute, setMute] = useState(false);
+  const [bluetooth, setBluetooth] = useState(false);
   const { darkMode, setDarkMode } = useDarkMode();
   const [voiceVolume, setVoiceVolume] = useState(50);
   const [brightness, setBrightness] = useState(50);
+  const [notifications, setNotifications] =useState(false);
 
   // Toggle switch component
   const ToggleSwitch = ({ enabled, setEnabled }) => (
@@ -96,7 +97,7 @@ function Settings() {
         <div className="flex flex-col items-center z-10 relative">
           <div className="flex justify-center items-center relative text-4xl sm:text-5xl font-bold text-white  z-20 pt-4 md:pt-8 ">
             <Link
-              to="/client-home"
+              to="/clinician-home"
               className="absolute -left-12 sm:-left-20 md:-left-28 text-white"
             >
               <ArrowLeftIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
@@ -106,16 +107,22 @@ function Settings() {
 
           <div className="mt-16 w-full px-8">
             <SettingItem
-              title="Mute Voice"
-              description="Mute the robot's voice"
-              enabled={mute}
-              setEnabled={setMute}
+              title="Bluetooth"
+              description="Connect to Robot using Bluetooth"
+              enabled={bluetooth}
+              setEnabled={setBluetooth}
             />
             <SettingItem
               title="Dark Mode"
               description="Change UI theme"
               enabled={darkMode}
               setEnabled={setDarkMode}
+            />
+            <SettingItem
+              title="Notifications"
+              description="Allow App Notifications"
+              enabled={notifications}
+              setEnabled={setNotifications}
             />
             <SliderSetting
               title="Voice Volume"
@@ -134,7 +141,7 @@ function Settings() {
               iconRight={<MoonIcon />}
             />
           </div>
-          <Link to="/login-as" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:text-white dark:bg-opacity-40 opacity-90 py-4 md:py-6 lg:py-8 mt-80 mb-12 mx-24  text-3xl text-black font-inter  font-bold rounded-full">
+          <Link to="/login-as" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:text-white dark:bg-opacity-40 opacity-90 py-4 md:py-6 lg:py-8 mt-60 mb-12 mx-24  text-3xl text-black font-inter  font-bold rounded-full">
               <button className="w-full">
                 Log Out
               </button>
