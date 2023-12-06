@@ -134,6 +134,11 @@ function Settings() {
               iconRight={<MoonIcon />}
             />
           </div>
+          <Link to="/login-as" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:text-white dark:bg-opacity-40 opacity-90 py-4 md:py-6 lg:py-8 mt-80 mb-12 mx-24  text-3xl text-black font-inter  font-bold rounded-full">
+              <button className="w-full">
+                Log Out
+              </button>
+            </Link>
         </div>
       </div>
     </div>

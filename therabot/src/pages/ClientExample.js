@@ -41,7 +41,7 @@ function ClientHome() {
           
 
           {/* Contact Therapist Button */}
-          <Link to="" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 py-8 md:py-6 lg:py-8 mt-8 mb-12  text-3xl text-black font-inter  font-bold rounded-full">
+          <Link to="/message-client" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 py-8 md:py-6 lg:py-8 mt-8 mb-12  text-3xl text-black font-inter  font-bold rounded-full">
             <button className="w-full">
               Message John
             </button>

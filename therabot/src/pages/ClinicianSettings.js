@@ -13,10 +13,11 @@ import {
 } from "@heroicons/react/24/outline";
 
 function Settings() {
-  const [mute, setMute] = useState(false);
+  const [bluetooth, setBluetooth] = useState(false);
   const { darkMode, setDarkMode } = useDarkMode();
   const [voiceVolume, setVoiceVolume] = useState(50);
   const [brightness, setBrightness] = useState(50);
+  const [notifications, setNotifications] =useState(false);
 
   // Toggle switch component
   const ToggleSwitch = ({ enabled, setEnabled }) => (
@@ -108,8 +109,8 @@ function Settings() {
             <SettingItem
               title="Bluetooth"
               description="Connect to Robot using Bluetooth"
-              enabled={mute}
-              setEnabled={setMute}
+              enabled={bluetooth}
+              setEnabled={setBluetooth}
             />
             <SettingItem
               title="Dark Mode"
@@ -120,8 +121,8 @@ function Settings() {
             <SettingItem
               title="Notifications"
               description="Allow App Notifications"
-              enabled={darkMode}
-              setEnabled={setDarkMode}
+              enabled={notifications}
+              setEnabled={setNotifications}
             />
             <SliderSetting
               title="Voice Volume"
@@ -140,6 +141,11 @@ function Settings() {
               iconRight={<MoonIcon />}
             />
           </div>
+          <Link to="/login-as" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:text-white dark:bg-opacity-40 opacity-90 py-4 md:py-6 lg:py-8 mt-60 mb-12 mx-24  text-3xl text-black font-inter  font-bold rounded-full">
+              <button className="w-full">
+                Log Out
+              </button>
+            </Link>
         </div>
       </div>
     </div>

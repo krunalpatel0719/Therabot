@@ -37,7 +37,7 @@ function Notes({notes}) {
        <div className="scrollbar-none  mt-16 sm:mt-32 flex flex-col space-y-8 scale-75 sm:scale-100 overflow-auto max-h-[calc(100vh-175px)] sm:max-h-[calc(100vh-350px)]">
        {notes.map((note, index) => (
  <div className='pr-8 ml-4' key={note.id || `note-${index} `}>
-    <Link className = 'w-auto' to={`/new_note/${note.id}`}>
+    <Link className = 'w-auto' to={`/new_note2/${note.id}`}>
      
       <MessageWithTime
         icon={<BsSticky className='w-16 h-16 ' />}
@@ -52,11 +52,11 @@ function Notes({notes}) {
 
       </div>
           <div className='absolute bottom-0  w-full flex justify-center scale-100 sm:scale-100'>
-          <Link to="/new_note"  className=' flex justify-center scale-75 sm:scale-100'>
-            <div className="mb-8 w-48 h-16 bg-NOTES_GRADIENT dark:bg-emerald-400 opacity-30 z-10 rounded-xl shadow-lg"></div>
+          <Link to="/new_note2"  className=' flex justify-center scale-75 sm:scale-100'>
+            <div className="mb-8 w-96 h-16 bg-NOTES_GRADIENT dark:bg-emerald-400 opacity-30 z-10 rounded-xl shadow-lg"></div>
            
               
-            <button className="mb-8 w-48 h-16 text-black dark:text-white z-20 rounded-xl shadow-lg flex items-center justify-between px-6 absolute">
+            <button className="mb-8 w-96 h-16 text-black dark:text-white z-20 rounded-xl shadow-lg flex items-center justify-between px-6 absolute">
               <p className = 'font-inter opacity-70 z-20'> New Note </p>
               <div className = ' h-10 w-10 bg-NOTES_BUTTON rounded-xl z-10'> 
                 <PaperAirplaneIcon className="-rotate-45 text-white h-6 w-6 mx-auto my-2 z-10" />

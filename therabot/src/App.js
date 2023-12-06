@@ -24,6 +24,9 @@ import ApptNotes from './pages/ApptNotes';
 import ClinicianSettings from './pages/ClinicianSettings';
 import ClinicianNotifications from './pages/ClinicianNotifs'
 import ClinicianNotes from './pages/ClinicianNotes'
+import MessageClient from "./pages/MessageClient";
+import Sensors from './pages/Sensors';
+import NewNote2 from './pages/NewNote2'
 
 
 import {CalendarIcon} from '@heroicons/react/24/solid';
@@ -68,7 +71,14 @@ const App = () => {
           path="/new_note"
           element={<NewNote setNotes={setNotes} notes={notes} />}
         />
-
+           <Route
+          path="/new_note2"
+          element={<NewNote2 setNotes={setNotes} notes={notes} />}
+        />
+                <Route
+          path="/new_note2/:noteId"
+          element={<NewNote setNotes={setNotes} notes={notes} />}
+        />
         {/* <Route path="/new_note" element={<NewNote setNotes={setNotes} notes={notes}/>} />
         <Route path="/new_note/:noteId" component={NewNote} /> */}
         <Route path="/exercises" element={<Exercises />} />
@@ -96,7 +106,8 @@ const App = () => {
         <Route path="/clinician-settings"  element={<ClinicianSettings />} />
         <Route path="/clinician-notifications"  element={<ClinicianNotifications notifications={notifications} />} />
         <Route path="/clinician-notes"  element={<ClinicianNotes notes={notes}/>} />
-        
+        <Route path="/message-client" element={<MessageClient messages={messages} setMessages={setMessages} />}/>
+        <Route path="/sensors"  element={<Sensors />} />
 
         {/* </div> */}
       </Routes>
