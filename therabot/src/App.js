@@ -44,12 +44,16 @@ const App = () => {
     // ... more messages
   ]);
   const [notifications, setNotifications] = useState([
-    { icon: <EnvelopeIcon className ='w-16 h-16'/>, message1: 'Messages', message2: 'Therabot sent a new message.',  time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })},
+    { icon: <EnvelopeIcon className ='w-16 h-16'/>, message1: 'Messages', message2: 'Therabot sent a new message.',  time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/Chicago' })},
   
-    { icon: <CalendarIcon className ='w-16 h-16'/>, message1: 'Appointments', message2: 'You have an appointment at 6 PM today.', time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })},
-    { icon: <CalendarIcon className ='w-16 h-16'/>, message1: 'Appointments', message2: 'Your appointment at 5 PM has been cancelled.', time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })},
-    { icon: <BellAlertIcon className ='w-16 h-16'/>, message1: 'Reminders', message2: 'Therabot session today at 2 PM.',  time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/New_York' })}
+    { icon: <CalendarIcon className ='w-16 h-16'/>, message1: 'Appointments', message2: 'You have an appointment at 6 PM today.', time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/Chicago' })},
+    { icon: <CalendarIcon className ='w-16 h-16'/>, message1: 'Appointments', message2: 'Your appointment at 5 PM has been cancelled.', time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/Chicago' })},
+    { icon: <BellAlertIcon className ='w-16 h-16'/>, message1: 'Reminders', message2: 'Therabot session today at 2 PM.',  time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/Chicago' })}
     // ... other notifications ...
+  ]);
+  const [exercises, setExercises] = useState([
+    { icon: <BellAlertIcon className ='w-16 h-16'/>, message1: 'Cardio', message2: 'Your therapist has prescribed you cardio.',  time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: 'America/Chicago' })},
+  
   ]);
   return (
     <DarkModeProvider>
@@ -81,7 +85,7 @@ const App = () => {
         />
         {/* <Route path="/new_note" element={<NewNote setNotes={setNotes} notes={notes}/>} />
         <Route path="/new_note/:noteId" component={NewNote} /> */}
-        <Route path="/exercises" element={<Exercises />} />
+        <Route path="/exercises" element={<Exercises exercises = {exercises}/>} />
         <Route path="/contact-therapist" element={<ContactTherapist />} />
         <Route
           path="/text-therapist"

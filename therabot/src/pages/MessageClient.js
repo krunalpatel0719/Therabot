@@ -14,7 +14,7 @@ function MessageClient({ messages, setMessages }) {
 
   const sendMessage = () => {
     if (newMessage.trim()) {
-      setMessages([...messages, { text: newMessage, sender: "user" }]);
+      setMessages([...messages, { text: newMessage, sender: "therapist" }]);
       setNewMessage("");
     }
   };
@@ -63,7 +63,7 @@ function MessageClient({ messages, setMessages }) {
                     className={`shadow-sm  drop-shadow-lg max-w-xs md:max-w-md lg:max-w-lg p-2  pl-3 ml-2 text-base rounded-2xl ${
                       message.sender === "user"
                         ? "pl-3 md:pl-4 pr-3 md:pr-4 mr-2 ml-0 md:py-4 bg-blue-500 dark:bg-sky-700 text-white "
-                        : "pl-3 pr-3 ml-2 md:pl-4 md:pr-4  md:py-4 bg-gray-600 dark:text-white"
+                        : "pl-3 pr-3 ml-2 md:pl-4 md:pr-4  md:py-4 bg-white dark:bg-gray-600 dark:text-white"
                     }`}
                   >
                     <p className="whitespace-normal break-words  md:text-2xl">
