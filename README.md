@@ -1,2 +1,4 @@
 # Therabot
-node.js //ill do this soon
+Dependencies:
+*Node.js:
+Go to https://nodejs.org/en/download and follow instructions on the website.
