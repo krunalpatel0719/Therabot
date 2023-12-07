@@ -19,7 +19,7 @@ function Progress() {
 
           {/* 2x2 Grid of Buttons */}
           {/* get new icons */}
-          <div className="grid grid-cols-2 gap-24 mt-4 pr-16 pl-16 pt-16 -translate-y-32 dark:opacity-95">
+          <div className="grid grid-cols-2 gap-24 lg:gap-44 mt-4 pr-16 pl-16 pt-16 lg:-translate-y-80 -translate-y-32 dark:opacity-95">
           <div className="flex flex-col items-center relative">
             <div className="w-40 h-40 bg-blue-500 dark:bg-blue-600 rounded-full opacity-95 relative overflow-hidden">
               <div className="pie-slice dark:opacity-60"></div>
