@@ -178,10 +178,10 @@ const SensorDisc = ({ title, description, data }) => (
             >
               <ArrowLeftIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
             </Link>
-            <p className="text-4xl sm:text-5xl"> Sensors </p>
+            <p className="text-5xl sm:text-5xl"> Sensors </p>
           </div>
 
-          <div className="mt-24 w-full px-8">
+          <div className="mt-24 w-full scale-90">
             <SensorDisc
               title="Gas Detection"
               description="Gas Has Exceeded Normal Range"

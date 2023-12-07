@@ -12,14 +12,14 @@ function Progress() {
       <div className="overflow-x-hidden relative flex justify-center items-center h-screen w-screen ">
         <Eclipse className = "bg-SETTINGS_ECLIPSE dark:bg-[#6C244C] dark:opacity-70 opacity-20 "/>
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
-          <div className="text-5xl font-bold text-white z-20 pt-4 md:pt-8 relative">John Smith Progress<div className="relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">
-            <Link to="/client-example" className="absolute -left-12 sm:-left-24 -translate-y-4 bottom-1 sm:bottom-2 text-white "><ArrowLeftIcon className = "h-8 w-8"/></Link> 
+          <div className="text-4xl font-bold text-white z-20 pt-4 md:pt-8 relative">John Smith Progress<div className="relative text-4xl sm:text-5xl font-bold text-white z-20 pt-4 md:pt-8 ">
+            <Link to="/client-example" className="absolute -left-12 sm:-left-24 -translate-y-4 bottom-1 sm:bottom-2 text-white "><ArrowLeftIcon className = "h-8 w-8 translate-x-2"/></Link> 
           </div>
           </div>
 
           {/* 2x2 Grid of Buttons */}
           {/* get new icons */}
-          <div className="grid grid-cols-2 gap-24 mt-4 pr-16 pl-16 pt-16 -translate-y-52 dark:opacity-95">
+          <div className="grid grid-cols-2 gap-24 mt-4 pr-16 pl-16 pt-16 -translate-y-32 dark:opacity-95">
           <div className="flex flex-col items-center relative">
             <div className="w-40 h-40 bg-blue-500 dark:bg-blue-600 rounded-full opacity-95 relative overflow-hidden">
               <div className="pie-slice dark:opacity-60"></div>

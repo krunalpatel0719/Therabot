@@ -23,12 +23,12 @@ function ClientHome() {
           </div>
           {/* 2x2 Grid of Buttons */}
           {/* get new icons */}
-          <div className="grid grid-cols-2 gap-16 mt-4 pr-16 pl-16 pt-16">
+          <div className="grid grid-cols-2 gap-12 gap-x-48 mt-4 pr-16 pl-16 pt-16 scale-75 sm:scale-100">
             <Link to="/clinician-notes">
              <ButtonWithLabel icon=<ClipboardDocumentListIcon className="w-36 h-36"/> label="Notes" />
             </Link>
             <Link to="/clinician-exercises" className='text-center'>
-              <ButtonWithLabel icon=<BiSolidDog className="w-36 h-36"/> label="Exercises & Sensors" />
+              <ButtonWithLabel icon=<BiSolidDog className="w-36 h-36"/> label="Exercises Sensors" />
             </Link>
             <Link to="/clinician-progress">
              <ButtonWithLabel icon=<ChartBarIcon className="w-36 h-36"/>label="Progress" /> {/* change icons */}
@@ -41,7 +41,7 @@ function ClientHome() {
           
 
           {/* Contact Therapist Button */}
-          <Link to="/message-client" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 py-8 md:py-6 lg:py-8 mt-8 mb-12  text-3xl text-black font-inter  font-bold rounded-full">
+          <Link to="/message-client" className="w-full -translate-y-18 scale-75 sm:scale-100 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 py-8 md:py-6 lg:py-8 mt-8 mb-12 text-3xl text-black font-inter font-bold rounded-full">
             <button className="w-full">
               Message John
             </button>

@@ -20,15 +20,15 @@ function Exercises() {
             Exercises
           </div>
 
-          <div className="grid grid-cols-2 translate-x-16 gap-y-16 mt-4">
-            <div className="flex items-center">
+          <div className="grid grid-cols-2 items-center ml-6 gap-x-48 gap-y-16 mt-4">
+          <div className="flex items-center">
               <div className="w-24 h-24 bg-yellow-600 bg-opacity-90 rounded-full flex items-center justify-center">
               <FaRunning className='w-20 h-20'/>
               </div>
             </div>
 
             <div className="flex items-center">
-              <button className="w-96 h-16 -translate-x-40 flex items-center justify-center py-4 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 text-black text-3xl font-inter font-bold rounded-full">
+              <button className="w-52 h-auto -translate-x-40 flex items-center justify-center py-3 px-10 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 text-black text-3xl font-inter font-bold rounded-full">
                 <span>Prescribe Cardio</span>
               </button>
             </div>
@@ -40,7 +40,7 @@ function Exercises() {
             </div>
 
             <div className="flex items-center">
-              <button className="w-96 h-16 -translate-x-40 flex items-center justify-center py-4 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 text-black text-3xl font-inter font-bold rounded-full">
+              <button className="w-52 h-auto -translate-x-40 flex items-center justify-center py-3 px-10 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 text-black text-3xl font-inter font-bold rounded-full">
                 <span>Prescribe Meditation</span>
               </button>
             </div>
@@ -52,13 +52,13 @@ function Exercises() {
             </div>
 
             <div className="flex items-center">
-              <button className="w-96 h-16 -translate-x-40 flex items-center justify-center py-4 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 text-black text-3xl font-inter font-bold rounded-full">
+              <button className="w-52 h-auto -translate-x-40 flex items-center justify-center py-3 px-10 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 text-black text-3xl font-inter font-bold rounded-full">
                 <span>Prescribe Sun Time</span>
               </button>
             </div>
           </div>
 
-          <Link to="/sensors" className="w-96 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 py-8 md:py-6 lg:py-8 mt-8 mb-12  text-4xl text-black font-inter font-bold rounded-full">
+          <Link to="/sensors" className="w-80 drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-50 opacity-90 py-5 md:py-6 lg:py-8 mt-8 mb-12  text-4xl text-black font-inter font-bold rounded-full">
             <button className="w-full">
               Sensors
             </button>
