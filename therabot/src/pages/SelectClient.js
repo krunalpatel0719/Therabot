@@ -11,10 +11,10 @@ function SelectClient() {
 
         <Eclipse className = "bg-NOTIFICATIONS_ECLIPSE dark:bg-[#246144] dark:opacity-60 opacity-20 "/>
         <div className="flex flex-col h-screen justify-between items-center  z-10 relative">
-        <div className="text-5xl font-bold text-white z-20 pt-4 md:pt-8 relative"><Link to="/clinician-home" className="absolute -left-12 sm:-left-24 bottom-1 sm:bottom-2 text-white "><ArrowLeftIcon className = "h-8 w-8"/></Link>Select Client</div>
+        <div className="text-5xl font-bold text-white z-20 pt-4 md:pt-8 relative"><Link to="/clinician-home" className="absolute -left-12 sm:-left-24 bottom-1 sm:bottom-2 text-white "><ArrowLeftIcon className = "h-8 w-8 translate-x-2"/></Link>Select Client</div>
 
             {/* List of Buttons */}
-            <div className="h-full w-96 mt-64 overflow-y-auto scrollbar-none flex flex-col space-y-10 mb-10 -translate-y-10">
+            <div className="h-full w-full mt-64 overflow-y-auto scrollbar-none flex flex-col space-y-10 mb-10 -translate-y-10">
                 <Link to="/client-example" className="w-full drop-shadow-md shadow-lg bg-BUTTON_GREY dark:bg-opacity-70 opacity-90 py-6 md:py-6 lg:py-8 text-3xl text-black font-inter font-bold rounded-full">
                     <button className="w-full">
                     John Smith 
