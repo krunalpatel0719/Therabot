@@ -194,7 +194,7 @@ const SensorDisc = ({ title, description, data }) => (
             />
             <SensorDisc
               title="Temperature"
-              description="Temperature is Below Normal Range"
+              description="Temperature was Below Normal Range"
               data={data3}
             />
             <SensorDisc
